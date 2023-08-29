@@ -251,7 +251,42 @@ erDiagram
 
 ## 7. Store Service
 
-Check out the full details here 👉🏻 [Store Service README file.](https://github.com/Null-Pointer-Squad/CouponsServiceAPI)
+The Store Service is a key part of our e-commerce platform, focused on managing all store operations, stock inventory, and stock history. (we are using this system to simulate the shipping management process in our e-commerce platform)
+
+Check out the full details here 👉🏻 [Store Service README file.](https://github.com/Null-Pointer-Squad/store_service)
+
+and here is the ERD for the database used in this service:
+
+```mermaid
+erDiagram
+    store {
+        VARCHAR code PK
+        VARCHAR name
+        VARCHAR locatoin
+        VARCHAR phone_number
+    }
+
+
+    stock {
+        VARCHAR code PK
+        VARCHAR store_code FK
+        VARCHAR product_code 
+        Integer quantity
+    }
+
+    stock_history {
+        VARCHAR code PK
+        VARCHAR store_code FK
+        VARCHAR product_code
+        VARCHAR action
+        TIMESTAMP action_date
+        Integer previous_quantity
+        Integer new_quantity
+    }
+
+    store ||..o{ stock : has
+    store ||..o{ stock_history : has
+```
 
 ---
 
