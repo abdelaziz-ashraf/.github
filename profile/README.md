@@ -222,7 +222,32 @@ erDiagram
 
 ## 6. Coupons Service API
 
+The Coupons service is built for managing coupons and their consumption history.  
+
 Check out the full details here 👉🏻 [Coupons Service API README file.](https://github.com/Null-Pointer-Squad/CouponsServiceAPI)
+
+and here is the ERD for the database used in this service:
+
+```mermaid
+erDiagram
+    COUPONS ||..o{ USED_COUPONS : after using it will be
+    COUPONS {
+        String      code
+        Long        max_allowed_uses
+        Long        usage_number
+        Date        expiry_date
+        String      type
+        Double      percentage_or_value
+        Bool        active
+    }
+
+    USED_COUPONS {
+        Coupon      coupon
+        String      order_code
+        Date        usage_date
+    }
+
+```
 
 ## 7. Store Service
 
