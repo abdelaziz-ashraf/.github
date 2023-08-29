@@ -156,9 +156,6 @@ erDiagram
         VARCHAR code
     }
 
-
-
-
     CUOPON{
         Integer id PK
         Integer coupon_code
@@ -167,9 +164,9 @@ erDiagram
     }
 
 
-
     ORDER }o..|| CUOPON : has
     ORDER ||--|{ ORDER_ITEM : has
+
 ```
 
 ## 5. Shipping API
@@ -230,7 +227,7 @@ and here is the ERD for the database used in this service:
 
 ```mermaid
 erDiagram
-    COUPONS ||..o{ USED_COUPONS : after using it will be
+    COUPONS ||..o{ USED_COUPONS : "after using it will be"
     COUPONS {
         String      code
         Long        max_allowed_uses
