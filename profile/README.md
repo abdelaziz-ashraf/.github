@@ -227,7 +227,7 @@ and here is the ERD for the database used in this service:
 
 ```mermaid
 erDiagram
-    COUPONS ||..o{ USED_COUPONS : "after using it will be"
+    COUPONS ||..o{ CONSUMPTION_HISTORY : has
     COUPONS {
         String      code
         Long        max_allowed_uses
@@ -238,7 +238,7 @@ erDiagram
         Bool        active
     }
 
-    USED_COUPONS {
+    CONSUMPTION_HISTORY {
         Coupon      coupon
         String      order_code
         Date        usage_date
