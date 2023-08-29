@@ -284,6 +284,13 @@ erDiagram
     store ||..o{ stock : has
     store ||..o{ stock_history : has
 ```
+## 8. Order Notification System
+
+This repository houses a Java Spring Boot project designed to manage the processing of order creation events within an ecommerce microservices ecosystem. The application leverages RabbitMQ to receive order events, facilitates the dissemination of notifications to both customers and merchants, and persistently logs all email communications to a MongoDB instance. 
+
+
+Check out the full details here 👉🏻 [Notificatio Service README file.](https://github.com/Null-Pointer-Squad/notification-system)
+
 
 ---
 
